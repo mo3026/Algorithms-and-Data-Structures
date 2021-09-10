@@ -1,3 +1,13 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp
+{
+    class Program
+    {
         public static void CombinationSum(IList<int> candidates, int target, IList<IList<int>> list, int i, List<int> current)
         {
             if (target == 0)
@@ -30,3 +40,5 @@
             CombinationSum(num, target, list, i, new List<int>());
             return list.ToList();
         }
+    }
+}
