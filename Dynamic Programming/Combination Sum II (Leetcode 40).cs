@@ -8,37 +8,29 @@ namespace ConsoleApp
 {
     class Program
     {
-        public static void CombinationSum(IList<int> candidates, int target, IList<IList<int>> list, int i, List<int> current)
+        public static void backtrack(List<IList<int>> list, List<int> tempList, int[] nums, int remain, int start)
         {
-            if (target == 0)
+            if (remain < 0) return;
+            else if (remain == 0) list.Add(tempList.ToList());
+            else
             {
-                if(list.Count>0) if(list[list.Count-1].SequenceEqual(current)) return;
-                list.Add(current);
-                return;
-            }
-            while (i < candidates.Count)
-            {
-                if (target < candidates[i]) i++;
-                else break;
-            }
-            if (i < candidates.Count)
-            {
-                CombinationSum(candidates, target, list, i + 1, current.ToList());
-                current.Add(candidates[i]);
-                CombinationSum(candidates, target - candidates[i], list, i+1, current.ToList());
-                //CombinationSum(candidates, target - candidates[i], list, i, current.ToList());
+                for (int i = start; i < nums.Length; i++)
+                {
+                    // follow-up: Each number in candidates may only be used once in the combination + there are duplicates.
+                    if (i > start && nums[i] == nums[i - 1]) continue; // previous DFS has expanded later value!
+                    tempList.Add(nums[i]);
+                    backtrack(list, tempList, nums, remain - nums[i], i + 1); // i + 1 HERE! because we CANNOT reuse same elements
+                    tempList.RemoveAt(tempList.Count - 1);
+                }
             }
         }
 
-        public static IList<IList<int>> CombinationSum(int[] candidates, int target)
+        public IList<IList<int>> CombinationSum2(int[] candidates, int target)
         {
             List<IList<int>> list = new List<IList<int>>();
-            List<int> num = candidates.ToList();
-            num.Sort();
-            num.Reverse();
-            int i = 0;
-            CombinationSum(num, target, list, i, new List<int>());
-            return list.ToList();
+            Array.Sort(candidates);
+            backtrack(list, new List<int>(), candidates, target, 0);
+            return list;
         }
     }
 }
