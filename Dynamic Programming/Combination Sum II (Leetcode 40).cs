@@ -16,10 +16,9 @@ namespace ConsoleApp
             {
                 for (int i = start; i < nums.Length; i++)
                 {
-                    // follow-up: Each number in candidates may only be used once in the combination + there are duplicates.
-                    if (i > start && nums[i] == nums[i - 1]) continue; // previous DFS has expanded later value!
+                    if (i > start && nums[i] == nums[i - 1]) continue;
                     tempList.Add(nums[i]);
-                    backtrack(list, tempList, nums, remain - nums[i], i + 1); // i + 1 HERE! because we CANNOT reuse same elements
+                    backtrack(list, tempList, nums, remain - nums[i], i + 1);
                     tempList.RemoveAt(tempList.Count - 1);
                 }
             }
