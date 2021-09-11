@@ -14,7 +14,7 @@ namespace ConsoleApp2
     {
         public bool IsMatch(string s, string p)
         {
-            return isMatch(s, p, 0, 0);
+            return IsMatch(s, p, 0, 0);
         }
 
         private bool IsMatch(string s, string p, int i, int j)
