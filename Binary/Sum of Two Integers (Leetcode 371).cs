@@ -8,8 +8,6 @@ namespace ConsoleApp2
 {
     class Program
     {
-        //https://learn.digilentinc.com/Documents/281
-        //https://www.youtube.com/watch?v=YdaG_03fQ6E
         public static int addTwoComp(int a, int b)
         {
             if (a == 0) return b;
