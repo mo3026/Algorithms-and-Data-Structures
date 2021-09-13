@@ -8,8 +8,6 @@ namespace ConsoleApp2
 {
     class Program
     {
-        //https://learn.digilentinc.com/Documents/281
-        //https://www.youtube.com/watch?v=YdaG_03fQ6E
         static int addOne(int num)
         {
             if (num == -1) return 0;
