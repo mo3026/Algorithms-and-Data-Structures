@@ -8,7 +8,6 @@ namespace ConsoleApp2
 {
     public class Program
     {
-        //https://www.youtube.com/watch?v=6kTZYvNNyps
         public static bool dfs(char c, Dictionary<char,bool> visited, Dictionary<char, HashSet<char>> adj, List<char> order)
         {
             if (visited.ContainsKey(c)) return visited[c];
