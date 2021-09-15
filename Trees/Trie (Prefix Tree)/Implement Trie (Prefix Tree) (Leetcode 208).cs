@@ -8,7 +8,6 @@ namespace ConsoleApp2
 {
     public class Program
     {
-        //https://www.youtube.com/watch?v=oobqoCJlHA0
         public class Trie
         {
             private Trie[] Children = new Trie[26];
