@@ -8,7 +8,6 @@ namespace ConsoleApp2
 {
     class Program
     {
-        //https://www.youtube.com/watch?v=lXVy6YWFcRM
         public static int MaxProduct(int[] nums)
         {
             int result = nums.Max();
