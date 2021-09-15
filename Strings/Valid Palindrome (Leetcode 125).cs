@@ -11,7 +11,6 @@ namespace ConsoleApp2
         public static bool IsPalindrome(string s)
         {
             if (String.IsNullOrEmpty(s)) return true;
-
             var sChars = s.ToCharArray();
             var head = 0;
             var tail = s.Length - 1;
@@ -24,24 +23,20 @@ namespace ConsoleApp2
                     head++;
                     continue;
                 }
-
                 if (!Char.IsLetterOrDigit(headChar))
                 {
                     head++;
                     continue;
                 }
-
                 if (!Char.IsLetterOrDigit(tailChar))
                 {
                     tail--;
                     continue;
                 }
-
                 if (Char.ToLower(headChar) != Char.ToLower(tailChar))
                 {
                     return false;
                 }
-
                 head++;
                 tail--;
             }
